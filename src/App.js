@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Ritem from './components/Ritem';
 import './App.css';
+import GoogleMap from './components/GoogleMap';
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
     </div>
     <div className='harta'>
         <div>
-   
+          <GoogleMap/>
         </div>
     </div>
   </div>
