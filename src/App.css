@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.containerApp{
+  display: flex;
+}
+
+.coloanaRestaurante{
+  flex: 1; /* Utilizează spațiul disponibil */
+  background-color: #e0e0e0;
+  padding: 20px;
+}
+
+.harta{
+  flex: 1; /* Utilizează spațiul disponibil */
+  background-color: #e0e0e0;
+  padding: 20px;
+}
