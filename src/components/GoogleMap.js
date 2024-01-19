@@ -8,7 +8,7 @@ class GoogleMap extends React.Component {
     const mapStyles = {
         width: '30%',
         height: '500px',
-        
+        marginTop: '100px',
     };
     return (
       <Map
