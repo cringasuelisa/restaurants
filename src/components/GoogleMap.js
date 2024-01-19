@@ -15,7 +15,7 @@ class GoogleMap extends React.Component {
         google={this.props.google}
         zoom={14} // Adjust the initial zoom level
         style={mapStyles}
-        initialCenter= {0}// Set the initial center of the map
+        initialCenter={{ lat: 0, lng: 0 }}// Set the initial center of the map
         >
         {/* Add map content here */}
       </Map>
@@ -23,5 +23,5 @@ class GoogleMap extends React.Component {
   }
 }
 export default GoogleApiWrapper({
-  apiKey: process.env.AIzaSyDcemjPywRDg8rLVk4Nz6X5sgA_aogyGuA,
+  apiKey: 'AIzaSyDcemjPywRDg8rLVk4Nz6X5sgA_aogyGuA',
 })(GoogleMap);
