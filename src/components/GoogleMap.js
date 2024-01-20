@@ -30,7 +30,7 @@ class GoogleMap extends React.Component {
             title={restaurant.denumire}
             icon={{
               url: restaurant.img,
-              scaledSize: new google.maps.Size(40, 40),
+              scaledSize: new google.maps.Size(70, 70),
             }}
           />
         ))}
