@@ -19,7 +19,7 @@ class GoogleMap extends React.Component {
     return (
       <Map
         google={google}
-        zoom={10}
+        zoom={11.5}
         style={mapStyles}
         initialCenter={center}
       >
