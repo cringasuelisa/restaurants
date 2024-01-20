@@ -1,27 +1,45 @@
 import React from 'react';
-
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 class GoogleMap extends React.Component {
-
   render() {
+    console.log('Restaurants:', this.props.restaurants);
+
+    const { google, restaurants } = this.props;
+    console.log(restaurants)
+
     const mapStyles = {
-        width: '30%',
-        height: '500px',
-        marginTop: '100px',
+      width: '40%',
+      height: '500px',
+      marginTop: '100px',
     };
+
+    const center = { lat: 44.439663, lng: 26.096306 };
+
     return (
       <Map
-        google={this.props.google}
-        zoom={14} // Adjust the initial zoom level
+        google={google}
+        zoom={10}
         style={mapStyles}
-        initialCenter={{ lat: 0, lng: 0 }}// Set the initial center of the map
-        >
-        {/* Add map content here */}
+        initialCenter={center}
+      >
+        {this.props.restaurants.map((restaurant) => (
+          <Marker
+            key={restaurant.id}
+            position={{ lat: restaurant.latitudine, lng: restaurant.longitudine }}
+            title={restaurant.denumire}
+            icon={{
+              url: restaurant.img,
+              scaledSize: new google.maps.Size(40, 40),
+            }}
+          />
+        ))}
       </Map>
     );
   }
 }
+
+
 export default GoogleApiWrapper({
-  apiKey: API_KEY,
+  apiKey: 'YOUR_GOOGLE_MAPS_API_KEY',
 })(GoogleMap);

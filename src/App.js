@@ -3,7 +3,6 @@ import Ritem from './components/Ritem';
 import './App.css';
 import GoogleMap from './components/GoogleMap';
 
-
 function App() {
   const [restaurants, setRestaurants] = useState([]);
 
@@ -14,22 +13,20 @@ function App() {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
-
   return (
-  <div className='containerApp'>
-    <div className='coloanaRestaurante'>
-      <h1>Lista Restaurante</h1>
-      {restaurants.map((restaurant) => (
-        <Ritem item={restaurant}/>
-      ))}
-    </div>
-    <div className='harta'>
+    <div className='containerApp'>
+      <div className='coloanaRestaurante'>
+        <h1>Lista Restaurante</h1>
+        {restaurants.map((restaurant) => (
+          <Ritem key={restaurant.id} item={restaurant} />
+        ))}
+      </div>
+      <div className='harta'>
         <div>
-          <GoogleMap/>
+          <GoogleMap restaurants={restaurants} />
         </div>
+      </div>
     </div>
-  </div>
-   
   );
 }
 
